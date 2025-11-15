@@ -1,0 +1,34 @@
+{
+  "name": "mern-bug-tracker",
+  "version": "1.0.0",
+  "description": "Bug Tracker application with comprehensive testing and debugging",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "test": "jest",
+    "test:unit": "jest --testMatch='**/tests/unit/**/*.test.{js,jsx}'",
+    "test:integration": "jest --testMatch='**/tests/integration/**/*.test.{js,jsx}'",
+    "test:e2e": "cypress run",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm start",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "cd server && npm run dev",
+    "client:dev": "cd client && npm start"
+  },
+  "keywords": [
+    "mern",
+    "testing",
+    "bug-tracker",
+    "jest",
+    "cypress"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
+

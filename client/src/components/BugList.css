@@ -1,0 +1,30 @@
+/* BugList.css - Styles for bug list component */
+
+.bug-list {
+  margin-top: 20px;
+}
+
+.bug-list h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.bug-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .bug-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
