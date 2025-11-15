@@ -56,6 +56,21 @@ if (process.env.NODE_ENV !== 'test') {
   app.use(morgan('dev'));
 }
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.status(200).json({ 
+    message: 'Bug Tracker API',
+    version: '1.0.0',
+    status: 'OK',
+    endpoints: {
+      health: '/health',
+      api: '/api/bugs',
+      documentation: 'See README.md for API documentation'
+    },
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.status(200).json({ 
